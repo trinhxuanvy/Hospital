@@ -1,0 +1,88 @@
+.service-container {
+    padding: 38px 92px;
+    background-color: #f0f0f0;
+}
+.service-container .service-header {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 36px;
+}
+.service-container .service-header .item:first-child {
+    width: 70%;
+}
+.service-container .service-header .item:last-child {
+    width: 30%;
+}
+.service-container .service-header .item .title {
+    font-size: 28px;
+    color: #575757;
+}
+.service-container .service-body {
+    display: flex;
+    justify-content: space-between;
+}
+.service-container .service-body .item {
+    width: calc(94%/3);
+}
+.service-container .service-body .item .title {
+    font-size: 22px;
+    font-weight: bolder;
+    padding: 16px 0;
+    color: #575757;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.service-container .service-body .item .para {
+    color: #636363;
+}
+.service-container .service-body .item .link {
+    display: inline-block;
+    width: 150px;
+    text-align: center;
+    padding: 10px 0;
+    background-color: #DB426B;
+    transition: 0.2s;
+    color: #fff;
+    margin: 16px 0;
+}
+.service-container .service-body .item .link:hover {
+    background-color: #ff0000;
+}
+@media screen and (max-width: 992px) {
+    .service-container {
+        padding: 38px 32px;
+    }
+    .service-container .service-header {
+        justify-content: center;
+    }
+    .service-container .service-header .item:first-child {
+        display: none;
+    }
+    .service-container .service-header .item:last-child {
+        width: 100%;
+        text-align: center;
+    }
+    .service-container .service-body .item {
+        width: calc(98%/3);
+    }
+    .service-container .service-body .item .para {
+        font-size: 15px;
+    }
+}
+@media screen and (max-width: 768px) {
+    .service-container {
+        padding: 38px 16px;
+    }
+    .service-container .service-header {
+        padding-bottom: 20px;
+    }
+    .service-container .service-body {
+        display: block;
+    }
+    .service-container .service-body .item {
+        width: 90%;
+        margin: 16px auto;
+        text-align: center;
+    }
+}

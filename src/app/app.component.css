@@ -1,0 +1,10 @@
+.header {
+    position: relative !important;
+    z-index: 1 !important;
+}
+
+.slide-banner, .team, .welcome, .service-hot, .service, .consults {
+    position: relative !important;
+    z-index: 0 !important;
+}
+

@@ -1,0 +1,156 @@
+<div class="team-container">
+    <div class="team-header">
+        <p class="title">Đội ngũ bác sĩ</p>
+    </div>
+    <div class="team-body">
+        <owl-carousel-o [options]="customTeam">
+            <ng-container *ngFor="let items of obj">
+                <ng-template carouselSlide>
+                    <div class="item">
+                        <div class="image">
+                            <img src="{{items.image}}" alt="">
+                            <div class="detail">
+                                <a href="{{items.id}}" class="link">Thông tin bác sĩ</a>
+                            </div>
+                        </div>
+                        <div class="content">
+                            <p class="title">{{items.name}}</p>
+                            <p class="para">{{items.position}}
+                                <br>{{items.workplace}}
+                            </p>
+                        </div>
+                    </div>
+                </ng-template>
+            </ng-container> 
+            <ng-template carouselSlide>
+                <div class="item">
+                    <div class="image">
+                        <img src="../../../assets/images/more-doctor.png" alt="">
+                    </div>
+                    <div class="content">
+                        <a href="" class="fix-link">Xem thêm bác sĩ khác</a>
+                    </div>
+                </div>
+            </ng-template>
+        </owl-carousel-o>
+    </div>
+</div>
+
+<style>
+    .team-container {
+        padding: 38px 92px;
+        background-color: #f0f0f0;
+    }
+
+    .team-container .team-header .title {
+        display: block;
+        text-align: center;
+        font-size: 32px;
+        text-transform: uppercase;
+        color: #3FA34D;
+        font-weight: bolder;
+        position: relative;
+        padding-bottom: 10px;
+        margin-bottom: 32px !important;
+    }
+    .team-container .team-header .title::after {
+        position: absolute;
+        content: '';
+        display: block;
+        width: 60px;
+        height: 4px;
+        background-color: #3FA34D;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        border-radius: 50px;
+    }
+    .team-container .image {
+        width: 100%;
+        display: block;
+        margin: 0 auto;
+        position: relative;
+        border-radius: 50%;
+        overflow: hidden;
+    }
+    .team-container .team-body .item {
+        padding: 25px 20px;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: 0.5s;
+        position: relative;
+        background-color: #fff;
+    }
+    .team-container .image:hover .detail {
+        opacity: 0.8;
+    }
+    .team-container .image .detail .link:hover {
+        background-color: #32803d;
+    }
+    .team-container .detail {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 100%;
+        background-color: #3FA34D;
+        opacity: 0;
+        transition: 0.4s;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .team-container .detail .link {
+        display: block;
+        transition: 0.2s;
+        width: 150px;
+        text-align: center;
+        padding: 10px 0;
+        border: 1px solid #fff;
+        color: #fff;
+        background-color: transparent;
+    }
+    .team-container .content .title {
+        font-weight: bolder;
+        color: #3FA34D;
+        text-align: center;
+        padding: 20px 0;
+        font-size: 18px;
+    }
+    .team-container .content .para {
+        font-size: 14px;
+        line-height: 2;
+        display: block;
+        text-align: center;
+    }
+    .team-container .fix-link {
+        display: block;
+        color: #333;
+        transition: 0.2;
+        padding: 10px 0;
+        margin: 16px auto;
+        width: 150px;
+        text-align: center;
+    }
+    .team-container .fix-link:hover {
+        color: #3FA34D;
+    }
+    @media screen and (max-width: 768px) {
+        .team-container {
+            padding: 38px 16px;
+        }
+        .team-container .team-body .item {
+            padding: 0 8px;
+        }
+        .team-container .team-header .title {
+            font-size: 26px;
+        }
+        .team-container .team-body .title {
+            font-size: 20px;
+        }
+        .team-container .image {
+            width: 80%;
+        }
+    }
+</style>

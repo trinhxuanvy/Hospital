@@ -1,0 +1,113 @@
+<div class="consults-container">
+    <div class="consults-body">
+        <div class="item">
+            <p class="title">Tư vấn khám chữa bệnh chuẩn xác hiệu quả.</p>
+            <p class="para">Đội ngũ y bác sĩ đầu ngành và giàu kinh nghiệm mang đến cho bạn những lời khuyên chuẩn xác và phù hợp nhất với tình trạng mỗi cá nhân</p>
+            <div class="item-link">
+                <a href="" class="link"><i class="fa fa-calendar" aria-hidden="true"></i> Đặt hẹn ngay</a>
+                <a href="" class="link"><i class="fa fa-comment" aria-hidden="true"></i> Nhận tư vấn</a>
+            </div>
+        </div>
+        <div class="item">
+            <div class="image">
+                <img src="../../../assets/images/15z.png" alt="">
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    .consults-container {
+        margin: 38px 0;
+        padding: 0 92px;
+    }
+    .consults-container .consults-body {
+        background-image: url('../../../assets/images/14.png');
+        background-position: top right;
+        background-size: auto;
+        background-attachment: fixed;
+        background-repeat: no-repeat;
+    }
+    .consults-container .consults-body {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .consults-container .consults-body .item {
+        width: 50%;
+    }
+    .consults-container .consults-body .item .title {
+        font-size: 38px;
+        color: #00AC4F;
+        font-weight: bolder;
+    }
+    .consults-container .consults-body .item .para {
+        font-size: 20px;
+        display: block;
+        margin: 32px 0 !important;
+        letter-spacing: 0.5px;
+    }
+    .consults-container .consults-body .item .item-link {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .consults-container .consults-body .item .item-link .link {
+        display: inline-block;
+        width: 200px;
+        text-align: center;
+        padding: 16px 0;
+        color: #00AC4F;
+        font-size: 18px;
+        font-weight: bolder;
+        box-shadow: 0px 9px 16px 0px #999;
+        border-radius: 50px;
+        margin: 0 10px;
+        border: 1px solid #00AC4F;
+        transition: 0.2s;
+    }
+    .consults-container .consults-body .item .item-link .link:first-child,
+    .consults-container .consults-body .item .item-link .link:last-child:hover
+    {
+        background-color: #00AC4F;
+        color: #fff;
+    }
+    .consults-container .consults-body .item .item-link .link:first-child:hover {
+        background-color: #fff;
+        color: #00AC4F;
+    }
+    @media screen and (max-width: 992px) {
+        .consults-container .consults-body .item .title {
+            font-size: 30px;
+        }
+        .consults-container .consults-body .item .para {
+            font-size: 16px !important;
+            margin: 16px 0 !important;
+            
+        }
+        
+        
+    }
+    @media screen and (max-width: 992px) and (min-width: 768px) {
+        .consults-container .consults-body .item .item-link {
+            display: block;
+        }
+        .consults-container .consults-body .item .item-link .link {
+            margin: 10px 0 !important;
+            display: block;
+            padding: 8px 0;
+        }
+    }
+    @media screen and (max-width: 768px) {
+        .consults-container {
+            padding: 0 16px;
+        }
+        .consults-container .consults-body {
+            display: block;
+            text-align: center;
+        }
+        .consults-container .consults-body .item {
+            width: 100%;
+        }
+    }
+</style>

@@ -1,0 +1,30 @@
+<div class="header-top">
+    <div class="header-container">
+        <div class="brand-top">
+            <div class="logo-top"><img src="../../../assets/images/2cdb35de00e42db380d3804b3453dd43.png" alt=""></div>
+        </div>
+        <div class="navbar-top" [class]="!this.isToggle ? 'navbar-top-active' : ''">
+            <div class="menu-top">
+                <ul class="menu-list">
+                    <li class="menu-item"><a href="" class="menu-link active">Trang chủ</a></li>
+                    <li class="menu-item"><a href="" class="menu-link">Về chúng tôi</a></li>
+                    <li class="menu-item"><a href="" class="menu-link">Dịch vụ</a></li>
+                    <li class="menu-item"><a href="" class="menu-link">Hướng dẫn khách hàng</a></li>
+                    <li class="menu-item"><a href="" class="menu-link">Tin tức</a></li>
+                </ul>
+            </div>
+            <div class="action-item">
+                <a href="" class="btn-action-item">Đặt lịch khám</a>
+            </div>
+        </div>
+        <div class="toggle-top">
+            <div class="toggle-container" (click)="onToggleBar()">
+                <span class="bar" [class]="!this.isToggle ? 'bar-1' : 'bar'"></span>
+                <span class="bar" [class]="!this.isToggle ? 'bar-2' : 'bar'"></span>
+                <span class="bar" [class]="!this.isToggle ? 'bar-3' : 'bar'"></span>
+            </div>
+        </div>
+    </div>
+</div>
+
+
