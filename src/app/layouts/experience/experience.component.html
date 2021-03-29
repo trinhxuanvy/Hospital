@@ -1,0 +1,123 @@
+<div class="experience-container">
+    <div class="experience-top">
+        <owl-carousel-o [options]="customExpTop">
+            <ng-container *ngFor="let item of objTop">
+                <ng-template carouselSlide>
+                    <div class="item">
+                        <div class="image"><img src="{{item.image}}" alt=""></div>
+                        <p class="number">{{item.number}}</p>
+                        <p class="title">{{item.title}}</p>
+                    </div>
+                </ng-template>
+            </ng-container>
+        </owl-carousel-o>
+    </div>
+    <div class="experience-body">
+        <owl-carousel-o [options]="customExpBody">
+            <ng-container *ngFor="let item of objBody">
+                <ng-template carouselSlide>
+                    <div class="item">
+                        <div class="image"><img src="{{item.image}}" alt=""></div>
+                        <div class="content">
+                            <p class="name">{{item.name}}</p>
+                            <p class="career">{{item.career}}</p>
+                            <p class="info">{{item.info}}</p>
+                        </div>
+                    </div>
+                </ng-template>
+            </ng-container>
+        </owl-carousel-o>
+    </div>
+</div>
+
+<style>
+    .experience-container {
+        padding: 92px 92px 32px;
+        margin-top: 220px;
+        position: relative;
+        background-color: #368A41;
+    }
+    .experience-container .experience-top {
+        padding: 48px 0;
+        width: 90%;
+        position: absolute;
+        background-color: #ffffff;
+        z-index: 1;
+        left: 50%;
+        transform: translateX(-50%);
+        top: -220px;
+    }
+    .experience-container .experience-top .item {
+        text-align: center;
+    }
+    .experience-container .experience-top .item .image {
+        height: 76px;
+        filter: hue-rotate(238deg);
+        -webkit-filter: hue-rotate(238deg);
+    }
+    .experience-container .experience-top .item .image img {
+        width: auto!important;
+        margin: 0 auto;
+    }
+    .experience-container .experience-top .item .number {
+        font-size: 40px;
+        font-weight: bolder;
+        color: #333;
+        padding: 16px 0 8px;
+    }
+    .experience-container .experience-top .item .title {
+        color: #333;
+
+    }
+    .experience-container .experience-body {
+        position: relative;
+        z-index: 0;
+        padding: 38px 0;
+    }
+    .experience-container .experience-body .item{
+       display: flex;
+       justify-content: center;
+       align-items: center;
+    }
+    .experience-container .experience-body .item .image {
+        width: 30%;
+    }
+    .experience-container .experience-body .item .content {
+        width: 50%;
+        color: #fff !important;
+    }
+    .experience-container .experience-body .item .content .name {
+        font-size: 22px;
+        font-weight: bolder;
+    }
+    .experience-container .experience-body .item .content .career {
+        font-size: 18px;
+        font-weight: bolder;
+    }
+    .experience-container .experience-body .item .content .info {
+        text-align: justify;
+    }
+    @media screen and (max-width: 768px) {
+        .experience-container {
+            padding: 32px 16px;
+        }
+        .experience-container .experience-body .item .content {
+            width: 100% !important;
+            text-align: center;
+        }
+        .experience-container .experience-body .item {
+            display: block;
+        }
+        .experience-container .experience-body .item .image {
+            width: 100%;
+        }
+        .experience-container .experience-body .item .content {
+            width: 100%;
+        }
+    }
+    @media screen and (max-width: 992px) {
+        .experience-container .experience-body .item .content {
+            width: 70%;
+        }
+    }
+</style>

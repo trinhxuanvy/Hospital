@@ -67,5 +67,14 @@ body {
     position: fixed;
     box-shadow: 0px 0px 5px #000026;
     background-color: #fff;
-    z-index: 1;
+    z-index: 10;
+}
+
+.experience .experience-body .owl-next, .experience .owl-prev {
+    border: 1px solid #fff;
+}
+
+.experience .experience-body .owl-next:hover, .experience .experience-body .owl-prev:hover {
+    background-color: #fff !important;
+    color: #368a41 !important;
 }

@@ -11,6 +11,7 @@ import { WebcomeComponent } from './layouts/webcome/webcome.component';
 import { ServiceHotComponent } from './layouts/service-hot/service-hot.component';
 import { TeamComponent } from './layouts/team/team.component';
 import { ConsultsComponent } from './layouts/consults/consults.component';
+import { ExperienceComponent } from './layouts/experience/experience.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { ConsultsComponent } from './layouts/consults/consults.component';
     WebcomeComponent,
     ServiceHotComponent,
     TeamComponent,
-    ConsultsComponent
+    ConsultsComponent,
+    ExperienceComponent
   ],
   imports: [
     BrowserModule,
