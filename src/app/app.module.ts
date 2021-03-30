@@ -13,6 +13,7 @@ import { TeamComponent } from './layouts/team/team.component';
 import { ConsultsComponent } from './layouts/consults/consults.component';
 import { ExperienceComponent } from './layouts/experience/experience.component';
 import { NewsComponent } from './layouts/library/library.component';
+import { FooterComponent } from './layouts/footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { NewsComponent } from './layouts/library/library.component';
     TeamComponent,
     ConsultsComponent,
     ExperienceComponent,
-    NewsComponent
+    NewsComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
