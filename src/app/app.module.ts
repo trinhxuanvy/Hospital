@@ -12,6 +12,7 @@ import { ServiceHotComponent } from './layouts/service-hot/service-hot.component
 import { TeamComponent } from './layouts/team/team.component';
 import { ConsultsComponent } from './layouts/consults/consults.component';
 import { ExperienceComponent } from './layouts/experience/experience.component';
+import { NewsComponent } from './layouts/library/library.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { ExperienceComponent } from './layouts/experience/experience.component';
     ServiceHotComponent,
     TeamComponent,
     ConsultsComponent,
-    ExperienceComponent
+    ExperienceComponent,
+    NewsComponent
   ],
   imports: [
     BrowserModule,
