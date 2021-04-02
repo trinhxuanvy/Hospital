@@ -1,0 +1,91 @@
+<div class="login-container" [class]="isSuccess ? 'display-none' : ''">
+    <div class="login-header">
+        <p class="title">Đăng nhập để sử dụng dịch vụ</p>
+    </div>
+    <div class="login-body">
+        <form class="form-group" (submit)="SubmitLogin(formSubmit.value)" #formSubmit="ngForm">
+            <div class="input-form">
+                <label for="">Nhập email</label>
+                <input placeholder="Email của bạn" ngModel #text="ngModel" [(ngModel)]="email" type="email" name="email" required>
+                <p class="message" [class]="((text.touched && text.errors?.required) || (isSuccess == false)) ? 'opacity-1' : 'opacity-0'">Vui lòng nhập lại email</p>  
+                <label for="">Nhập mật khẩu</label>
+                <input placeholder="Mật khẩu của bạn" ngModel #text="ngModel" [(ngModel)]="password" type="password" name="password" required>
+                <p class="message" [class]="((text.touched && text.errors?.required) || (isSuccess == false)) ? 'opacity-1' : 'opacity-0'">Vui lòng nhập lại mật khẩu</p>  
+                <button class="submit" [disabled]="formSubmit.invalid">Đăng ký</button>
+                <a href="" class="forgot-link">Quên mật khẩu ?</a>
+            </div> 
+        </form>     
+    </div>
+</div>
+
+<div class="set-up" [class]="!isSuccess ? 'display-none' : ''">
+    <app-set-up-time></app-set-up-time>
+</div>
+
+<style>
+    .login-container {
+        padding: 32px 92px;
+        background-color: #f3f3f3;
+    }
+    .login-container .login-header .title {
+        display: block;
+        text-align: center;
+        font-size: 26px;
+        font-weight: bolder;
+        text-transform: uppercase;
+        color: #3FA34D !important;
+    }
+    .login-container .login-body {
+        padding: 32px 0 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+    }
+    .login-container .login-body .input-form {
+        display: flex;
+        flex-direction: column;
+        padding: 30px;
+        background-color: #fff;
+        border-radius: 5px;
+        box-shadow: 0px 1px 5px #000026;
+    }
+    .login-container .login-body .input-form input {
+        border: 2px solid #b6b6b6 !important;
+        padding: 10px 16px;
+        width: 300px;
+        border-radius: 5px;
+    }
+    .login-container .login-body .message {
+        text-align: right;
+        color: #ff0000;
+        font-size: 12px;
+    }
+    .login-container .login-body button {
+        border: 1px solid #3FA34D;
+        background-color: #3FA34D;
+        color: #fff;
+        border-radius: 5px;
+        padding: 10px 0;
+        cursor: pointer;
+        margin-top: 15px;
+        transition: 0.2s;
+    }
+    .login-container .login-body button:hover {
+        background-color: #378a42;
+    }
+    .login-container .login-body .forgot-link {
+        padding: 10px 0;
+        display: block;
+        text-align: center;
+    }
+    .opacity-0 {
+        opacity: 0;
+    }
+    .opacity-1 {
+        opacity: 1;
+    }
+    .display-none {
+        display: none;
+    }
+</style>

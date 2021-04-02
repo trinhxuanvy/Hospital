@@ -6,10 +6,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./footer.component.css']
 })
 export class FooterComponent implements OnInit {
+  email = '';
+  isEmail = true;
 
   constructor() { }
 
   ngOnInit(): void {
   }
 
+  SubmitEmail(text) {
+    return '@'.concat(text.value) ? this.isEmail = true : this.isEmail = false;
+  }
 }

@@ -1,0 +1,193 @@
+<div class="set-up-time-container">
+    <div class="set-up-time-body">
+        <div class="item">
+            <p class="title">Lưu ý</p>
+            <ul class="conent-notice">
+                <li class="notice-item">
+                    Lịch hẹn chỉ có hiệu lực khi Quý khách được xác nhận chính thức từ Bệnh viện thông qua
+                    điện thoại hoặc email.
+                </li>
+                <li class="notice-item">
+                    Quý khách sử dụng dịch vụ đặt hẹn trực tuyến, vui lòng đặt hẹn ít nhất 24h trước
+                    khi đến khám.
+                </li>
+                <li class="notice-item">
+                    Quý khách vui lòng cung cấp thông tin chính xác để được hỗ trợ nhanh nhất.
+                </li>
+                <li class="notice-item">
+                    Trường hợp khẩn cấp hay có triệu chứng nguy hiểm, vui lòng liên hệ trực tiếp cơ sở y tế để kịp thời xử lý.
+                </li>
+            </ul>
+            <a href="tel:+0706434429" class="hot-line"><i class="fa fa-phone-square" aria-hidden="true"></i> Hotline: 0706434429</a>
+        </div>
+        <div class="item">
+            <p class="title">Đặt lịch khám bệnh</p>
+            <form class="form-group" (submit)="SubmitSetUpTime(formSubmit.value)" #formSubmit="ngForm">
+                <div class="input-form">
+                    <div class="form-item">
+                        <label for="">Bạn muốn đặt hẹn cho</label>
+                        <div class="check-radio-box">
+                            <div class="ratio-box-item">
+                                <input type="radio" [(ngModel)]="data.who" name="who" value="1">
+                                <label for="">Bản thân</label>
+                            </div>
+                            <div class="ratio-box-item">
+                                <input type="radio" [(ngModel)]="data.who" name="who" value="2">
+                                <label for="">Người thân</label>
+                            </div>  
+                        </div>
+                    </div>
+                    <div class="form-item">
+                        <label for="">Họ tên</label>
+                        <input ngModel #text="ngModel" [(ngModel)]="data.name" type="text" name="name" required>
+                        <p class="message" [class]="text.touched && text.errors?.required ? 'opacity-1' : 'opacity-0'">Vui lòng nhập lại tên</p>  
+                    </div>
+                    <div class="form-item">
+                        <label for="">Số điện thoại</label>
+                        <input ngModel #text="ngModel" [(ngModel)]="data.phone" type="text" name="phone" required>
+                        <p class="message" [class]="text.touched && text.errors?.required ? 'opacity-1' : 'opacity-0'">Vui lòng nhập lại số điện thoại</p>
+                    </div>
+                    <div class="form-item">
+                        <label for="">Email</label>
+                        <input ngModel #text="ngModel" [(ngModel)]="data.email" type="email" name="email" required>
+                        <p class="message" [class]="text.touched && text.errors?.required ? 'opacity-1' : 'opacity-0'">Vui lòng nhập lại email</p>  
+                    </div>
+                    <div class="form-item">
+                        <div class="date-time-item">
+                            <label for="">Ngày đặt hẹn</label>
+                            <input ngModel #text="ngModel" [(ngModel)]="data.date" type="date" name="date" required>
+                            <p class="message" [class]="text.touched && text.errors?.required ? 'opacity-1' : 'opacity-0'">Vui lòng nhập lại ngày</p>
+                        </div>
+                        <div class="date-time-item">
+                            <label for="">Thời gian</label>
+                            <input ngModel #text="ngModel" [(ngModel)]="data.time" type="time" name="time" required>
+                            <p class="message" [class]="text.touched && text.errors?.required ? 'opacity-1' : 'opacity-0'">Vui lòng nhập lại thời gian</p>
+                        </div>
+                    </div>
+                    <div class="form-item">
+                        <label for="">Chọn bệnh viện</label>
+                        <select name="where" id="" [(ngModel)]="data.where" required>
+                            <option value="1">Bệnh viện mắt Sài Gòn Hà Nội (77 Nguyễn Du)</option>
+                            <option value="2">Bệnh viện mắt Sài Gòn Lê Thị Riêng (100 Lê Thị Riêng)</option>
+                        </select>
+                        <p class="message" [class]="text.touched && text.errors?.required ? 'opacity-1' : 'opacity-0'">Vui lòng nhập lại bệnh viện</p>
+                    </div>
+                    <div class="form-item">
+                        <label for="">Mô tả triệu chứng / lý do khám</label>
+                        <textarea [(ngModel)]="data.descripte" name="descipte" type="text"></textarea>
+                        <p class="message" [class]="text.touched && text.errors?.required ? 'opacity-1' : 'opacity-0'">Vui lòng nhập lại lý do</p>
+                    </div>
+                    
+                    <button class="submit" [disabled]="formSubmit.invalid"><i class="fa fa-calendar" aria-hidden="true"></i> Đặt lịch hẹn</button>
+                </div> 
+            </form>     
+        </div>
+    </div>
+</div>
+
+<style>
+    .set-up-time-container {
+        padding: 32px 92px;
+    }
+    .set-up-time-container .set-up-time-body {
+        padding: 40px 80px;
+        box-shadow: 0px 1px 5px #000026;
+        display: flex;
+        border-radius: 5px;
+    }
+    .set-up-time-container .set-up-time-body .item:nth-child(1) {
+        width: 50%;
+        padding-right: 50px;
+    }
+    .set-up-time-container .set-up-time-body .item .title {
+        color: #3FA34D;
+        font-size: 28px;
+        font-weight: bolder;
+        padding-bottom: 20px;
+    }
+    .set-up-time-container .set-up-time-body .item:nth-child(1) ul li {
+        list-style: disc;
+        text-align: justify;
+        padding-bottom: 20px;
+    }
+    .set-up-time-container .set-up-time-body .item:nth-child(1) .hot-line {
+        display: block;
+        padding: 20px 0;
+        width: 350px;
+        background-color: #3FA34D;
+        color: #fff;
+        text-align: center;
+        border-radius: 5px;
+        margin: 0 auto;
+        transition: 0.2s;
+    }
+    .set-up-time-container .set-up-time-body .item:nth-child(1) .hot-line:hover {
+        background-color: #368d41;
+    }
+    .set-up-time-container .set-up-time-body .item:nth-child(2) {
+        width: 50%;
+    }
+    .set-up-time-container .set-up-time-body .item:nth-child(2) label {
+        font-size: 12px;
+    }
+    .set-up-time-container .set-up-time-body .item:nth-child(2) .check-radio-box {
+        display: flex;
+    }
+    .set-up-time-container .set-up-time-body .item:nth-child(2) .check-radio-box .ratio-box-item label {
+        margin-left: 4px;
+    }
+    .set-up-time-container .set-up-time-body .item:nth-child(2) .check-radio-box .ratio-box-item:nth-child(1) {
+        margin-right: 16px;
+    }
+    .set-up-time-container .set-up-time-body .item:nth-child(2) .form-item:not(:nth-child(1)) input {
+        display: block;
+        width: 100%;
+        font-size: 14px;
+        padding: 6px 16px;
+    }
+    .set-up-time-container .set-up-time-body .item:nth-child(2) .form-item:nth-child(5){
+        display: flex;
+        align-items: center;
+    }
+    .set-up-time-container .set-up-time-body .item:nth-child(2) .form-item:nth-child(5) .date-time-item:nth-child(1) {
+        margin-right: 16px;
+    }
+    .set-up-time-container .set-up-time-body .item:nth-child(2) textarea {
+        width: 100%;
+        padding: 6px 16px;
+        font-size: 14px;
+    }
+    .set-up-time-container .set-up-time-body .item:nth-child(2) select {
+        width: 100%;
+        padding: 6px 16px;
+        font-size: 14px;
+    }
+    .set-up-time-container .set-up-time-body .item .message {
+        text-align: right;
+        font-size: 12px;
+        color: #ff0000;
+    }
+    .set-up-time-container .set-up-time-body form button {
+        border-radius: 5px;
+        border: 1px solid #3FA34D;
+        color: #fff;
+        padding: 10px 0;
+        width: 150px;
+        text-align: center;
+        display: block;
+        margin: 0 auto;
+        background-color: #3FA34D;
+        margin-top: 16px;
+        transition: 0.2s;
+        cursor: pointer;
+    }
+    .set-up-time-container .set-up-time-body button:hover {
+        background-color: #368d41;
+    }
+    .opacity-1 {
+        opacity: 1;
+    }
+    .opacity-0 {
+        opacity: 0;
+    }
+</style>

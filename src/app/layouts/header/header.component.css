@@ -95,6 +95,7 @@
     color: #fff;
     border-radius: 5px;
     transition: 0.2s;
+    cursor: pointer;
 }
 .btn-action-item:hover {
     background-color: #368a41;

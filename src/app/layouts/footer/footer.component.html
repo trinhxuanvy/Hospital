@@ -39,6 +39,28 @@
             </div>
         </div>
     </div>
+    
+</div>
+
+<div class="footer-expand-container">
+    <div class="footer-expand">
+        <div class="item">
+            <p class="title">Theo dõi tin tức và dịch vụ mới nhất của chũng tôi!</p>
+            <i class="fa fa-facebook" aria-hidden="true"></i>
+            <i class="fa fa-youtube-play" aria-hidden="true"></i>
+        </div>
+        <div class="item">
+            <p class="title">Cập nhật thông tin mới nhất!</p>
+            <form class="form-group" (submit)="SubmitEmail(formSubmit)" #formSubmit="ngForm">
+                <div class="input-form">
+                    <input placeholder="Email của bạn" ngModel #text="ngModel" [(ngModel)]="email" name="email" required>
+                    <button class="submit" [disabled]="formSubmit.invalid">Đăng ký</button>
+                </div>
+                <p class="message" *ngIf="text.touched && text.errors?.required">Vui lòng nhập lại Email</p>  
+            </form>
+        </div>
+        
+    </div>
 </div>
 
 <style>
@@ -106,6 +128,66 @@
         left: 0;
         border-radius: 50px;
     }
+    .footer-expand-container {
+        padding: 32px 92px;
+        background-color: #36c74a;
+        color: #fff;
+    }
+    .footer-expand-container .footer-expand {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .footer-expand-container .footer-expand .item {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .footer-expand-container .footer-expand .item .fa{
+        font-size: 26px;
+        margin-left: 16px;
+    }
+    .footer-expand-container .footer-expand .item .fa-facebook {
+        color: #228bb4 !important;
+    }
+    .footer-expand-container .footer-expand .item .fa-youtube-play {
+        color: #d60c0c !important;
+    }
+    .footer-expand-container .footer-expand .item form {
+        position: relative;
+        display: flex;
+        align-items: center;
+        margin-left: 16px !important;
+    }
+    .footer-expand-container .footer-expand .item form .input-form {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .footer-expand-container .footer-expand .item form .input-form input{
+        padding: 8px 16px;
+        border: 5px solid #fff;
+    }
+    .footer-expand-container .footer-expand .item form .input-form button {
+        padding: 8px 16px;
+        width: 110px;
+        border: 5px solid #fff;
+        cursor: pointer;
+        color: #fff;
+        background-color: #3FA34D;
+    }
+    .footer-expand-container .footer-expand .item .message {
+        position: absolute;
+        display: block;
+        bottom: -25px;
+        color: #ff0000;
+    }
+    .footer-expand-container .footer-expand .item:nth-child(2) {
+            flex-direction: column;
+    }
+    .footer-expand-container .footer-expand .item:nth-child(2) .title {
+        padding: 8px 0;
+    }
     @media screen and (max-width: 992px) {
         .footer-container .footer-body .item .logo{
             display: block;
@@ -115,6 +197,16 @@
         .footer-container {
             padding: 32px 16px;
         }
+        .footer-expand-container {
+            padding: 32px 16px;
+            overflow: hidden;
+        }
+        .footer-expand-container .footer-expand {
+            flex-direction: column;
+        }
+        
+        
+        
     }
     @media screen and (max-width: 992px) {
         .footer-container .footer-body .item:nth-child(1) {
@@ -132,5 +224,12 @@
         .footer-container .footer-body .item .logo{
             display: block;
         }
+        .footer-expand-container .footer-expand .item:nth-child(1) {
+            flex-direction: column;
+        }
+        .footer-expand-container .footer-expand .item:nth-child(1) .fa {
+            padding: 4px 0;
+        }
+        
     }
 </style>
