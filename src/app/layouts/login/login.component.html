@@ -1,25 +1,21 @@
-<div class="login-container" [class]="isSuccess ? 'display-none' : ''">
+<div class="login-container">
     <div class="login-header">
         <p class="title">Đăng nhập để sử dụng dịch vụ</p>
     </div>
     <div class="login-body">
-        <form class="form-group" (submit)="SubmitLogin(formSubmit.value)" #formSubmit="ngForm">
+        <form class="form-group" method="POST" (submit)="SubmitLogin(formSubmit.value)" #formSubmit="ngForm">
             <div class="input-form">
                 <label for="">Nhập email</label>
                 <input placeholder="Email của bạn" ngModel #text="ngModel" [(ngModel)]="email" type="email" name="email" required>
-                <p class="message" [class]="((text.touched && text.errors?.required) || (isSuccess == false)) ? 'opacity-1' : 'opacity-0'">Vui lòng nhập lại email</p>  
+                <p class="message" [class]="((text.touched && text.errors?.required)) ? 'opacity-1' : 'opacity-0'">Vui lòng nhập lại email</p>  
                 <label for="">Nhập mật khẩu</label>
                 <input placeholder="Mật khẩu của bạn" ngModel #text="ngModel" [(ngModel)]="password" type="password" name="password" required>
-                <p class="message" [class]="((text.touched && text.errors?.required) || (isSuccess == false)) ? 'opacity-1' : 'opacity-0'">Vui lòng nhập lại mật khẩu</p>  
-                <button class="submit" [disabled]="formSubmit.invalid">Đăng ký</button>
+                <p class="message" [class]="((text.touched && text.errors?.required)) ? 'opacity-1' : 'opacity-0'">Vui lòng nhập lại mật khẩu</p>  
+                <button type="submit" class="submit" [disabled]="formSubmit.invalid">Đăng ký</button>
                 <a href="" class="forgot-link">Quên mật khẩu ?</a>
             </div> 
         </form>     
     </div>
-</div>
-
-<div class="set-up" [class]="!isSuccess ? 'display-none' : ''">
-    <app-set-up-time></app-set-up-time>
 </div>
 
 <style>

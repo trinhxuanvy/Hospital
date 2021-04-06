@@ -7,11 +7,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
   isToggle = true;
-
   constructor() { }
 
   ngOnInit(): void {
   }
+
 
   onToggleBar() {
     return this.isToggle ? this.isToggle = false : this.isToggle = true;

@@ -1,0 +1,80 @@
+<div class="user-container" [class]="isClick ? 'user-container' : 'user-container-right'">
+    <div class="user-body">
+        <div class="image" id="image-user">
+            <img src="" alt="">
+        </div>
+        <div class="content" id="content-login">
+            <a href="" class="link">Cá nhân</a>
+            <a href="" class="link">Dịch vụ</a>
+            <a routerLink="dang-xuat" class="link" (click)="LogOut()">Đăng xuất</a>
+            
+        </div>
+        <div class="content" id="content-logout">
+            <a href="dang-nhap" class="link">Đăng nhập</a>
+            <a routerLink="dang-xuat" class="link">Đăng ký</a>
+        </div>
+        <div class="btn-show-item" (click)="ShowUser()">
+            <i class="fa fa-angle-double-left" aria-hidden="true"></i>
+        </div>
+    </div>
+</div>
+
+<style>
+    .user-container {
+        position: fixed;
+        top: 85px;
+        right: -90px;
+        transition: 0.2s;
+    }
+    .user-container-right {
+        right: 0px;
+    }
+    .user-container .user-body {
+        width: 100px;
+        background-color: #3ca84aec;
+        position: relative;
+        padding: 10px 15px;
+        border-radius: 0 0 0 10px;
+        box-shadow: 1px 0px 5px #000026;
+    }
+    .user-container .user-body .image {
+        width: 50px;
+        border-radius: 50px;
+        margin: 0 auto;
+        overflow: hidden;
+        border: 5px solid #3ee955;
+    }
+    .user-container .user-body .content {
+        padding: 5px 0 0;
+    }
+    .user-container .user-body #content-login {
+        display: none;
+    }
+    .user-container .user-body #content-logout {
+        display: block;
+    }
+    .user-container .user-body .content .link{
+        display: block;
+        color: #fff;
+        font-size: 13px;
+    }
+    .user-container .user-body .btn-show-item {
+        height: 40px;
+        width: 20px;
+        background-color: #368D41;
+        color: #fff;
+        opacity: 0.8;
+        border-radius: 5px 0 0 5px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        position: absolute;
+        top: 0;
+        left: -20px;
+        transition: 0.2s;
+    }
+    .user-container .user-body .btn-show-item:hover {
+        background-color: #22d622;
+    }
+</style>

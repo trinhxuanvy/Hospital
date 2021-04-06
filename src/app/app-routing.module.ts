@@ -20,7 +20,11 @@ import { SetUpTimeComponent } from './layouts/set-up-time/set-up-time.component'
 
 const router: Routes = [
     { path: '', component: BodyComponent },
-    { path: 'dat-lich-hen', component: LoginComponent}
+    { path: 'dat-lich-hen', component: SetUpTimeComponent,
+
+    },
+    { path: 'dang-nhap', component: LoginComponent},
+    { path: 'dang-xuat', redirectTo: 'dang-nhap', pathMatch: 'full' }
 ]
 
 @NgModule({
