@@ -29,17 +29,16 @@ export class LoginComponent implements OnInit {
   }
 
   SubmitLogin(text) {
-    let length = 0;
-    for (let item of this.config[length]) {
-      if (text.email === this.config[length][0] && text.password === this.config[length][1]) {
+    for (let item in this.config) {
+      if (text.email === this.config[item][0] && text.password === this.config[item][1]) {
         sessionStorage.setItem('isLogin', 'true');
+        sessionStorage.setItem('image', this.config[item][2]);
         this.router.navigate(['dat-lich-hen']);
         this.setUp.SetDisPlay('content-login', 'block');
         this.setUp.SetDisPlay('content-logout', 'none');
-        this.setUp.SetImage('image-user', '../../../assets/images/AG4A3420-scaled-e1598948508182-230x230.jpg')
+        this.setUp.SetImage('image-user', this.config[item][2]);
         return true;
       }
-      length++;
     }
   }
 }

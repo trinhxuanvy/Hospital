@@ -8,30 +8,30 @@ import { SetUp } from '../../setup';
 })
 export class UserComponent implements OnInit {
   isClick = false;
-
+  config: Object;
 
   constructor(
     private elRf: ElementRef,
-    private setUp: SetUp
+    private setUp: SetUp,
     ) { }
 
   ngOnInit(): void {
     if(sessionStorage.getItem('isLogin') == 'true') {
       this.setUp.SetDisPlay('content-login', 'block');
       this.setUp.SetDisPlay('content-logout', 'none');
-      this.setUp.SetImage('image-user', '../../../assets/images/AG4A3420-scaled-e1598948508182-230x230.jpg')
+      this.setUp.SetImage('image-user', sessionStorage.getItem('image'));
     }
     else {
       this.setUp.SetDisPlay('content-login', 'none');
       this.setUp.SetDisPlay('content-logout', 'block');
-      this.setUp.SetImage('image-user', '../../../assets/images/no-user.jpg')
+      this.setUp.SetImage('image-user', 'no-user.jpg')
     }
   }
 
   LogOut() {
     this.setUp.SetDisPlay('content-login', 'none');
     this.setUp.SetDisPlay('content-logout', 'block');
-    this.setUp.SetImage('image-user', '../../../assets/images/no-user.jpg')
+    this.setUp.SetImage('image-user', 'no-user.jpg')
     sessionStorage.removeItem('isLogin');
   }
 

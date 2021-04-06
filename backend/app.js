@@ -21,7 +21,7 @@ app.use('/api/post', (req, res, next) => {
                 if(err) {
                     console.log('Fail !!!');
                 };
-                connection.execute(`select * from MyUser`, (err, result) => {
+                connection.execute(`select * from IUser`, (err, result) => {
                     if(err) throw err;
                     console.log('Success !!!');
                     res.status(200).json(result.rows);

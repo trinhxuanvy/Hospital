@@ -8,7 +8,7 @@ export class SetUp {
         imageParent.removeChild(imageParent.firstChild);
 
         let image = document.createElement('img');
-        image.src = srcImage;  
+        image.src = '../../../assets/images/' + srcImage;  
         imageParent.appendChild(image);
     }
 }

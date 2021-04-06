@@ -19,8 +19,7 @@ export class SetUpTimeComponent implements OnInit {
   ngOnInit(): void {
     this.serverHttp.getProfile()
       .subscribe((data) => {
-        console.log(this.config = data);
-        console.log(data[0]);
+        this.config = data;
       })
 
     if(sessionStorage.getItem('isLogin') == 'true') {
